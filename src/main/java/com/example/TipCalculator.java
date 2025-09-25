@@ -1,19 +1,26 @@
 package com.example;
 import java.util.Scanner;
+import java.text.DecimalFormat; // The website that helped me understand how to round https://www.geeksforgeeks.org/java/java-program-to-round-a-number-to-n-decimal-places/
 
 public class TipCalculator {
     //WRITE YOUR PROGRAM IN calculateTip
     public static String calculateTip(int people, int percent, double cost) { //You must use these  variable in your calculations
-        //DO NOT DELETE ANY OF THE CODE BELOW      
+        //DO NOT DELETE ANY OF THE CODE BELOW
+        DecimalFormat money = new DecimalFormat ("#.##");    
+        double tip = (cost * (percent/100.0));
+        double total = cost + tip;
+        double perPersonNoTip = cost / people;
+        double tipSplit = tip / people;
+        double totalPerPerson = total / people;
 
         String result = "-------------------------------\n" +
-                       "Total bill before tip: $" + "" + "\n" +
-                       "Total percentage: " + "" + "%\n" +
-                       "Total tip: $" + "" + "\n" +
-                       "Total Bill with tip: $" + "" + "\n" +
-                       "Per person cost before tip: $" + "" + "\n" +
-                       "Tip per person: $" + "" + "\n" +
-                       "Total cost per person: $" + "" + "\n" +
+                       "Total bill before tip: $" + cost + "\n" +
+                       "Total percentage: " + percent + "%\n" +
+                       "Total tip: $" + money.format(tip) + "\n" +
+                       "Total Bill with tip: $" + money.format(total) + "\n" +
+                       "Per person cost before tip: $" + money.format(perPersonNoTip) + "\n" +
+                       "Tip per person: $" + money.format(tipSplit) + "\n" +
+                       "Total cost per person: $" + money.format(totalPerPerson) + "\n" +
                        "-------------------------------\n";
 
         return result;
