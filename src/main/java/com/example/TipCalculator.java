@@ -12,15 +12,20 @@ public class TipCalculator {
         double perPersonNoTip = cost / people;
         double tipSplit = tip / people;
         double totalPerPerson = total / people;
+        tip = (double) (Double.parseDouble(money.format(tip)));
+        total = (double) (Double.parseDouble(money.format(total)));
+        perPersonNoTip = (double) (Double.parseDouble(money.format(perPersonNoTip)));
+        tipSplit = (double) (Double.parseDouble(money.format(tipSplit)));
+        totalPerPerson = (double) (Double.parseDouble(money.format(totalPerPerson)));
 
         String result = "-------------------------------\n" +
                        "Total bill before tip: $" + cost + "\n" +
                        "Total percentage: " + percent + "%\n" +
-                       "Total tip: $" + money.format(tip) + "\n" +
-                       "Total Bill with tip: $" + money.format(total) + "\n" +
-                       "Per person cost before tip: $" + money.format(perPersonNoTip) + "\n" +
-                       "Tip per person: $" + money.format(tipSplit) + "\n" +
-                       "Total cost per person: $" + money.format(totalPerPerson) + "\n" +
+                       "Total tip: $" + tip + "\n" +
+                       "Total Bill with tip: $" + total + "\n" +
+                       "Per person cost before tip: $" + perPersonNoTip + "\n" +
+                       "Tip per person: $" + tipSplit + "\n" +
+                       "Total cost per person: $" + totalPerPerson + "\n" +
                        "-------------------------------\n";
 
         return result;
