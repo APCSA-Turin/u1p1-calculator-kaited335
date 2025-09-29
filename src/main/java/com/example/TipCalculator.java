@@ -33,24 +33,35 @@ public class TipCalculator {
 
     public static String extraCredit(int people, int percent, double cost) {
         String result = "Extra credit not implemented";
-        boolean condition = true;
     
-        //  COPY AND PASTE YOUR PROGRAM FROM calculateTip() HERE 
+    
+        DecimalFormat money = new DecimalFormat ("#.##");    
+        double tip = (cost * (percent/100.0));
+        double total = cost + tip;
+        double perPersonNoTip = cost / people;
+        double tipSplit = tip / people;
+        double totalPerPerson = total / people;
+        tip = (double) (Double.parseDouble(money.format(tip)));
+        total = (double) (Double.parseDouble(money.format(total)));
+        perPersonNoTip = (double) (Double.parseDouble(money.format(perPersonNoTip)));
+        tipSplit = (double) (Double.parseDouble(money.format(tipSplit)));
+        totalPerPerson = (double) (Double.parseDouble(money.format(totalPerPerson)));
+         result = "-------------------------------\n" +
+                       "Total bill before tip: $" + cost + "\n" +
+                       "Total percentage: " + percent + "%\n" +
+                       "Total tip: $" + tip + "\n" +
+                       "Total Bill with tip: $" + total + "\n" +
+                       "Per person cost before tip: $" + perPersonNoTip + "\n" +
+                       "Tip per person: $" + tipSplit + "\n" +
+                       "Total cost per person: $" + totalPerPerson + "\n" +
+                       "-------------------------------\n"+
+                       "Items ordered:\n" +
+                       "-------------------------------\n";         
+        !.equals("-1)");
         
-        // the while loop condition is checked,
-        // and if TRUE, runs the code inside.
-        // when the code inside is done running, the condition is rechecked,
-        // and the loop repeats as long as the condition remains TRUE.
-        // when the condition becomes FALSE, it stops
-
-        while (condition) {
-            //enter your code here 
-            System.out.println("placeholder");
-            condition = false;
-    
-        }
-
+                                            
         return result;
+        
     }
     
     
@@ -63,5 +74,6 @@ public class TipCalculator {
         //System.out.println(calculateTip(people,percent,cost));
         System.out.println(extraCredit(people, percent, cost));
     }
+    
 }
         
