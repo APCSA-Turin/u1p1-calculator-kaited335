@@ -34,7 +34,7 @@ public class TipCalculator {
     public static String extraCredit(int people, int percent, double cost) {
         String result = "Extra credit not implemented";
     
-    
+        Scanner scan = new Scanner(System.in);
         DecimalFormat money = new DecimalFormat ("#.##");    
         double tip = (cost * (percent/100.0));
         double total = cost + tip;
@@ -56,12 +56,19 @@ public class TipCalculator {
                        "Total cost per person: $" + totalPerPerson + "\n" +
                        "-------------------------------\n"+
                        "Items ordered:\n";       
-        //String x;
-        //while (!x.equals("-1")) {
-             
-        //}
+        String x = " ";
+        while (!x.equals("-1")) {
+          System.out.print("Enter an item name or type '-1' to finish:");
+             x = scan.nextLine();
+          if (!x.equals("-1")) {
+            result += x +"\n";
+          } else {
+            
+          }  
+                         
+        }
                
-                       
+        result += "-------------------------------\n";               
         
                                             
          return result;
