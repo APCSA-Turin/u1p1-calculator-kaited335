@@ -55,12 +55,16 @@ public class TipCalculator {
                        "Tip per person: $" + tipSplit + "\n" +
                        "Total cost per person: $" + totalPerPerson + "\n" +
                        "-------------------------------\n"+
-                       "Items ordered:\n" +
-                       "-------------------------------\n";         
-        !.equals("-1)");
+                       "Items ordered:\n";       
+        //String x;
+        //while (!x.equals("-1")) {
+             
+        //}
+               
+                       
         
                                             
-        return result;
+         return result;
         
     }
     
